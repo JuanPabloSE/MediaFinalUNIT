@@ -20,7 +20,7 @@ public class MediaFinal {
             double prova = lerNota(sc, "Digite a nota da PROVA OBJETIVA (0 a 10): ");
             double atividade = lerNota(sc, "Digite a nota da ATIVIDADE ORIENTADA (0 a 10): ");
 
-            double mediaFinal = (prova * 6 + atividade * 4) / 10;
+            double mediaFinal = ((prova * 6) + (atividade * 4)) / 10;
 
             System.out.println("\n----------------------------------------------");
             System.out.printf("Aluno(a): %s%n", nome);
