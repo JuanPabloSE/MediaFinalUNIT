@@ -55,10 +55,10 @@ public class MediaFinal {
                 if (nota >= 0 && nota <= 10) {
                     return nota;
                 } else {
-                    System.out.println("❌ Erro: a nota deve estar entre 0 e 10.");
+                    System.out.println("Erro: a nota deve estar entre 0 e 10.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("❌ Erro: digite um número válido.");
+                System.out.println("Erro: digite um número válido.");
             }
         }
     }
