@@ -36,7 +36,7 @@ public class MediaFinal {
             System.out.println("----------------------------------------------\n");
 
             System.out.print("Deseja calcular novamente? (S/N): ");
-            opcao = sc.nextLine().trim().toUpperCase();
+            opcao = sc.next().trim().toUpperCase();
 
         } while (opcao.equals("S"));
 
