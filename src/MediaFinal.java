@@ -17,23 +17,14 @@ public class MediaFinal {
             System.out.print("Digite seu nome: ");
             String nome = sc.nextLine();
 
-            double prova = lerNota(sc, "Digite a nota da PROVA OBJETIVA (0 a 10): ");
-            double atividade = lerNota(sc, "Digite a nota da ATIVIDADE ORIENTADA (0 a 10): ");
+            double prova = lerNota(sc, "Digite a nota da Prova Presencial - PP (0 a 10): ");
+            double pas = lerNota(sc, "Digite a nota da Produção de Aprendizagem Significativa - PAS (0 a 10): ");
 
-            double mediaFinal = ((prova * 6) + (atividade * 4)) / 10;
+            // MÉTODOS
+            double mediaFinal = calcularMedia(prova, pas);
+            String situacao = determinarSituacao(mediaFinal);
 
-            System.out.println("\n----------------------------------------------");
-            System.out.printf("Aluno(a): %s%n", nome);
-            System.out.printf("Média Final: %.2f%n", mediaFinal);
-
-            if (mediaFinal >= 6.0) {
-                System.out.println("Situação: APROVADO");
-            } else if (mediaFinal >= 4.0) {
-                System.out.println("Situação: PROVA FINAL");
-            } else {
-                System.out.println("Situação: REPROVADO");
-            }
-            System.out.println("----------------------------------------------\n");
+            mostrarInformacoes(nome, mediaFinal, situacao);
 
             System.out.print("Deseja calcular novamente? (S/N): ");
             opcao = sc.next().trim().toUpperCase();
@@ -62,4 +53,28 @@ public class MediaFinal {
             }
         }
     }
+
+    public static double calcularMedia(double prova, double pas) {
+        return ((prova * 6.0) + (pas * 4.0)) / 10;
+    }
+
+    public static String determinarSituacao(double mediaFinal) {
+        if (mediaFinal >= 6.0) {
+            return "Aprovado";
+        } else if (mediaFinal >= 4.0) {
+            return "Prova Final";
+        } else {
+            return "Reprovado";
+        }
+    }
+
+    public static void mostrarInformacoes(String nome, double mediaFinal, String situacao) {
+        System.out.println("\n----------------------------------------------");
+        System.out.printf("Aluno(a): %s%n", nome);
+        System.out.printf("Média Final: %.2f%n", mediaFinal);
+        System.out.printf("Situação: %s%n", situacao);
+
+        System.out.println("----------------------------------------------\n");
+    }
+
 }
