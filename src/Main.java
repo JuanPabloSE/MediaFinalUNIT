@@ -1,7 +1,8 @@
 import java.util.Locale;
 import java.util.Scanner;
 
-public class MediaFinalUnit {
+public class Main {
+
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
@@ -18,16 +19,16 @@ public class MediaFinalUnit {
             String nome = sc.nextLine();
 
             double prova = lerNota(sc, "Digite a nota da Prova Presencial - PP (0 a 10): ");
-            double pas = lerNota(sc, "Digite a nota da Produção de Aprendizagem Significativa - PAS (0 a 10): ");
+            double pas = lerNota(sc, "Digite a nota da PAS (0 a 10): ");
 
-            // MÉTODOS
-            double mediaFinal = calcularMedia(prova, pas);
-            String situacao = determinarSituacao(mediaFinal);
+            // Criando o objeto Aluno
+            Aluno aluno = new Aluno(nome, prova, pas);
 
-            mostrarInformacoes(nome, mediaFinal, situacao);
+            mostrarInformacoes(aluno);
 
             System.out.print("Deseja calcular novamente? (S/N): ");
             opcao = sc.next().trim().toUpperCase();
+            sc.nextLine(); // limpar buffer
 
         } while (opcao.equals("S"));
 
@@ -35,7 +36,6 @@ public class MediaFinalUnit {
         sc.close();
     }
 
-    // LÊ NOTA USANDO SOMENTE nextLine()
     public static double lerNota(Scanner sc, String mensagem) {
         while (true) {
             System.out.print(mensagem);
@@ -54,27 +54,11 @@ public class MediaFinalUnit {
         }
     }
 
-    public static double calcularMedia(double prova, double pas) {
-        return ((prova * 6.0) + (pas * 4.0)) / 10;
-    }
-
-    public static String determinarSituacao(double mediaFinal) {
-        if (mediaFinal >= 6.0) {
-            return "Aprovado";
-        } else if (mediaFinal >= 4.0) {
-            return "Prova Final";
-        } else {
-            return "Reprovado";
-        }
-    }
-
-    public static void mostrarInformacoes(String nome, double mediaFinal, String situacao) {
+    public static void mostrarInformacoes(Aluno aluno) {
         System.out.println("\n----------------------------------------------");
-        System.out.printf("Aluno(a): %s%n", nome);
-        System.out.printf("Média Final: %.2f%n", mediaFinal);
-        System.out.printf("Situação: %s%n", situacao);
-
+        System.out.printf("Aluno(a): %s%n", aluno.getNome());
+        System.out.printf("Média Final: %.2f%n", aluno.calcularMedia());
+        System.out.printf("Situação: %s%n", aluno.determinarSituacao());
         System.out.println("----------------------------------------------\n");
     }
-
 }

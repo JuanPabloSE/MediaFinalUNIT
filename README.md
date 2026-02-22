@@ -89,7 +89,7 @@ Esse método centraliza a validação e evita duplicação de código.
 
 1. Clone ou baixe o repositório  
 2. Abra o projeto em uma IDE Java (IntelliJ, Eclipse ou VS Code)  
-3. Compile e execute a classe `MediaFinalUnit`  
+3. Compile e execute a classe `Main`  
 4. Siga as instruções exibidas no terminal  
 
 ---
