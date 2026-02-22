@@ -12,7 +12,7 @@ tratamento de exceções e experiência do usuário.
 Este projeto consiste em uma **calculadora de média final acadêmica**, desenvolvida em **Java**, que calcula a situação do aluno com base em duas avaliações:
 
 - **Prova Presencial** (peso 6.0)
-- **Atividade Orientada** (peso 4.0)
+- **Produção de Aprendizagem Significativa - PAS** (peso 4.0)
 
 O sistema foi construído com foco em **boas práticas de programação**, evitando erros comuns de entrada de dados com `Scanner` e aplicando validações seguras.
 
@@ -38,11 +38,11 @@ O sistema foi construído com foco em **boas práticas de programação**, evita
 | Avaliação | Peso |
 |---------|------|
 | Prova Presencial | 6.0 |
-| Atividade Orientada | 4.0 |
+| Produção de Aprendizagem Significativa - PAS | 4.0 |
 
 **Fórmula da média final:**
 
-mediaFinal = (prova * 6 + atividade * 4) / 10
+mediaFinal = (prova * 6 + pas * 4) / 10
 
 
 ---
