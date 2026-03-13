@@ -16,7 +16,7 @@ public class Main {
             System.out.println("==============================================\n");
 
             System.out.print("Digite seu nome: ");
-            String nome = sc.nextLine();
+            String nome = sc.nextLine().trim();
 
             double prova = lerNota(sc, "Digite a nota da Prova Presencial - PP (0 a 10): ");
             double pas = lerNota(sc, "Digite a nota da PAS (0 a 10): ");
